@@ -5,14 +5,14 @@ using Project.Infrastructure.Implementation.Query.Base;
 
 namespace Project.Infrastructure.Implementation.Query
 {
-    public class ProductSizeQueryRepository : QueryRepository<ProductSize> , IProductSizeQueryRepository
+    public class CompanyQueryRepository : QueryRepository<Company>, ICompanyrQueryRepository
     {
         private readonly ApplicationDbContext _applicationDbContext;
 
-        public ProductSizeQueryRepository(ApplicationDbContext applicationDbContext) : base(applicationDbContext)
+        public CompanyQueryRepository(ApplicationDbContext applicationDbContext) : base(applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }
-        // Implement additional methods specific to ProductSizeQueryRepository here
+        // Implement additional methods specific to CompanyQueryRepository here
     }
 }

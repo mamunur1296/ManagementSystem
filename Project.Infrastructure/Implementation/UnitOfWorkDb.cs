@@ -21,6 +21,10 @@ namespace Project.Infrastructure.Implementation
 
         public IRetailerQueryRepository retailerQueryRepository { get; private set; }
 
+        public ICompanyCommandRepository companyCommandRepository { get; private set; }
+
+        public ICompanyrQueryRepository companyrQueryRepository { get; private set; }
+
         public UnitOfWorkDb(ApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
@@ -30,6 +34,8 @@ namespace Project.Infrastructure.Implementation
             productSizeCommandRepository = new ProductSizeCommandRepository(applicationDbContext);
             retailerCommandRepository = new RetailerCommandRepository(applicationDbContext);
             retailerQueryRepository = new RetailerQueryRepository(applicationDbContext);
+            companyCommandRepository = new CompanyCommandRepository(applicationDbContext);
+            companyrQueryRepository = new CompanyQueryRepository(applicationDbContext);
         }
 
 

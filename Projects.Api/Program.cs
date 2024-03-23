@@ -18,7 +18,10 @@ builder.Services.AddApplication().AddInfrastructure();
 builder.Services.AddAutoMapper(
     typeof(CustomerMappingProfile),
     typeof(ProductSizeMappingProfile),
-    typeof(RetaileMappingProfile));
+    typeof(RetaileMappingProfile),
+    typeof(CompanyMappingProfile)
+    
+    );
 builder.Services.AddDbContext<ApplicationDbContext>(option =>
 {
     option.UseSqlServer(builder.Configuration.GetConnectionString("dbcs"));

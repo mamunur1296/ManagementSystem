@@ -11,6 +11,8 @@ namespace Project.Domail.Abstractions
         IProductSizeQueryRepository productSizeQueryRepository { get; }
         IRetailerCommandRepository retailerCommandRepository { get; }
         IRetailerQueryRepository retailerQueryRepository { get; }
+        ICompanyCommandRepository companyCommandRepository { get; }
+        ICompanyrQueryRepository companyrQueryRepository { get; }
         Task SaveAsync();
     }
 }

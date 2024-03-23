@@ -19,6 +19,6 @@ namespace Project.Infrastructure.Implementation.Query
         {
             return await _applicationDbContext.Customers.FirstOrDefaultAsync(c => c.Email == email);
         }
-        // Extand your method or serce 
+        // Implement additional methods specific to CustomerQueryRepository here
     }
 }
