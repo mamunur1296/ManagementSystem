@@ -26,26 +26,26 @@ namespace Project.Domail.Entities
     //    //public virtual ICollection<Trader> Traders { get; set; }
     //}
 
-    public class DeliveryAddress
-    {
-        [Key]
-        public int Id { get; set; }
-        public int UserId { get; set; }
-        public string Address { get; set; }
-        public string Phone { get; set; }
-        public string Mobile { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime? CreationDate { get; set; }
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdateDate { get; set; }
-        public bool? IsActive { get; set; }
-        public DateTime? DeactivatedDate { get; set; }
-        public string DeactiveBy { get; set; }
-        public bool? IsDefault { get; set; }
+    //public class DeliveryAddress
+    //{
+    //    [Key]
+    //    public int Id { get; set; }
+    //    public int UserId { get; set; }
+    //    public string Address { get; set; }
+    //    public string Phone { get; set; }
+    //    public string Mobile { get; set; }
+    //    public string CreatedBy { get; set; }
+    //    public DateTime? CreationDate { get; set; }
+    //    public string UpdatedBy { get; set; }
+    //    public DateTime? UpdateDate { get; set; }
+    //    public bool? IsActive { get; set; }
+    //    public DateTime? DeactivatedDate { get; set; }
+    //    public string DeactiveBy { get; set; }
+    //    public bool? IsDefault { get; set; }
 
-        // Navigation property
-        public virtual User User { get; set; }
-    }
+    //    // Navigation property
+    //    public virtual User User { get; set; }
+    //}
 
     public class Order
     {
@@ -202,7 +202,7 @@ namespace Project.Domail.Entities
         public bool? IsBlocked { get; set; }
 
         // Navigation properties
-        public virtual ICollection<DeliveryAddress> DeliveryAddresses { get; set; }
+        //public virtual ICollection<DeliveryAddress> DeliveryAddresses { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
     }
 

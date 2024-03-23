@@ -5,14 +5,14 @@ namespace Project.Domail.Abstractions
 {
     public interface IUnitOfWorkDb
     {
-        ICustomerCommandRepository customerCommandRepository { get; }
-        ICustomerQueryRepository customerQueryRepository { get; }
         IProductSizeCommandRepository productSizeCommandRepository { get; }
         IProductSizeQueryRepository productSizeQueryRepository { get; }
         IRetailerCommandRepository retailerCommandRepository { get; }
         IRetailerQueryRepository retailerQueryRepository { get; }
         ICompanyCommandRepository companyCommandRepository { get; }
         ICompanyrQueryRepository companyrQueryRepository { get; }
+        IDeliveryAddressQueryRepository deliveryAddressQueryRepository { get; }
+        IDeliveryAddressCommandRepository deliveryAddressCommandRepository { get; }
         Task SaveAsync();
     }
 }

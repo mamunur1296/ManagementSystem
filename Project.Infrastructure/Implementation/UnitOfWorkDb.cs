@@ -10,8 +10,6 @@ namespace Project.Infrastructure.Implementation
     public class UnitOfWorkDb : IUnitOfWorkDb
     {
         private readonly ApplicationDbContext _applicationDbContext;
-        public ICustomerCommandRepository customerCommandRepository { get; private set; }
-        public ICustomerQueryRepository customerQueryRepository { get; private set; }
 
         public IProductSizeCommandRepository productSizeCommandRepository { get; private set; }
 
@@ -25,17 +23,21 @@ namespace Project.Infrastructure.Implementation
 
         public ICompanyrQueryRepository companyrQueryRepository { get; private set; }
 
+        public IDeliveryAddressQueryRepository deliveryAddressQueryRepository { get; private set; }
+
+        public IDeliveryAddressCommandRepository deliveryAddressCommandRepository { get; private set; }
+
         public UnitOfWorkDb(ApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
-            customerCommandRepository = new CustomerCommandRepository(applicationDbContext);
-            customerQueryRepository = new CustomerQueryRepository(applicationDbContext);
             productSizeQueryRepository= new ProductSizeQueryRepository(applicationDbContext);
             productSizeCommandRepository = new ProductSizeCommandRepository(applicationDbContext);
             retailerCommandRepository = new RetailerCommandRepository(applicationDbContext);
             retailerQueryRepository = new RetailerQueryRepository(applicationDbContext);
             companyCommandRepository = new CompanyCommandRepository(applicationDbContext);
             companyrQueryRepository = new CompanyQueryRepository(applicationDbContext);
+            deliveryAddressCommandRepository = new DeliveryAddressCommandRepository(applicationDbContext);
+            deliveryAddressQueryRepository = new DeliveryAddressQueryRepository(applicationDbContext);
         }
 
 

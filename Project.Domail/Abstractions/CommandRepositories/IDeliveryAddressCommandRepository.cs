@@ -3,7 +3,7 @@ using Project.Domail.Entities;
 
 namespace Project.Domail.Abstractions.CommandRepositories
 {
-    public interface ICustomerCommandRepository : ICommandRepository<Customer>
+    public interface IDeliveryAddressCommandRepository : ICommandRepository<DeliveryAddress>
     {
         // Add specific command methods here if needed
     }

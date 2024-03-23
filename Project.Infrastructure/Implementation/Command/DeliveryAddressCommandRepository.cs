@@ -5,11 +5,11 @@ using Project.Infrastructure.Implementation.Command.Base;
 
 namespace Project.Infrastructure.Implementation.Command
 {
-    public class CustomerCommandRepository : CommandRepository<Customer> , ICustomerCommandRepository
+    public class DeliveryAddressCommandRepository : CommandRepository<DeliveryAddress>, IDeliveryAddressCommandRepository
     {
         private readonly ApplicationDbContext _applicationDbContext;
 
-        public CustomerCommandRepository(ApplicationDbContext applicationDbContext):base(applicationDbContext)
+        public DeliveryAddressCommandRepository(ApplicationDbContext applicationDbContext) : base(applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }

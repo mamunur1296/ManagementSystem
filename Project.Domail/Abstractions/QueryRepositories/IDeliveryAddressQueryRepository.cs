@@ -3,9 +3,8 @@ using Project.Domail.Entities;
 
 namespace Project.Domail.Abstractions.QueryRepositories
 {
-    public interface ICustomerQueryRepository : IQueryRepository<Customer>
+    public interface IDeliveryAddressQueryRepository : IQueryRepository<DeliveryAddress>
     {
-        Task<Customer> GetCustomerByEmail(string email);
         // Add specific Query methods here if needed
     }
 }
