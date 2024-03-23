@@ -1,14 +1,14 @@
 ﻿using MediatR;
-using Project.Application.CustomerFeatures.Commands;
+using Project.Application.Features.CustomerFeatures.Commands;
 using Project.Domail.Abstractions;
 
-namespace Project.Application.CustomerFeatures.Handlers.CommandHandlers
+namespace Project.Application.Features.CustomerFeatures.Handlers.CommandHandlers
 {
-    internal class DeleteCustomerHandler : IRequestHandler<DeleteCustomerCommand, string>
+    internal class DeleteProductSizeHandler : IRequestHandler<DeleteCustomerCommand, string>
     {
         private readonly IUnitOfWorkDb _unitOfWorkDb;
 
-        public DeleteCustomerHandler(IUnitOfWorkDb unitOfWorkDb)
+        public DeleteProductSizeHandler(IUnitOfWorkDb unitOfWorkDb)
         {
             _unitOfWorkDb = unitOfWorkDb;
         }

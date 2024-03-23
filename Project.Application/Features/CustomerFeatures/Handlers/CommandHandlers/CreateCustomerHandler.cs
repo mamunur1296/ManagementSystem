@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using MediatR;
-using Project.Application.CustomerFeatures.Commands;
+using Project.Application.Features.CustomerFeatures.Commands;
 using Project.Application.Models;
 using Project.Domail.Abstractions;
 using Project.Domail.Entities;
 
-namespace Project.Application.CustomerFeatures.Handlers.CommandHandlers
+namespace Project.Application.Features.CustomerFeatures.Handlers.CommandHandlers
 {
     public class CreateCustomerHandler : IRequestHandler<CreateCustomerCommand, CustomerModel>
     {

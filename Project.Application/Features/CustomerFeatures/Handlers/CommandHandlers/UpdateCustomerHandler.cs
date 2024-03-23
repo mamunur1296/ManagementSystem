@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using MediatR;
-using Project.Application.CustomerFeatures.Commands;
+using Project.Application.Features.CustomerFeatures.Commands;
 using Project.Application.Models;
 using Project.Domail.Abstractions;
 
-namespace Project.Application.CustomerFeatures.Handlers.CommandHandlers
+namespace Project.Application.Features.CustomerFeatures.Handlers.CommandHandlers
 {
     public class UpdateCustomerHandler : IRequestHandler<UpdateCustomerCommand, CustomerModel>
     {
@@ -22,7 +22,7 @@ namespace Project.Application.CustomerFeatures.Handlers.CommandHandlers
             if (data == null) return default;
             else
             {
-                data.CreatedDate = DateTime.Now;
+                data.CreationDate = DateTime.Now;
                 data.FirstName = request.FirstName;
                 data.LastName = request.LastName;
                 data.Email = request.Email;

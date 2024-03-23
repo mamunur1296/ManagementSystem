@@ -6,11 +6,11 @@ namespace Project.Domail.Entities.Base
     {
         [Key]
         public Guid Id { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime ModifiedDate { get; private set; }
+        public DateTime CreationDate { get; set; }
+        public DateTime UpdateDate { get; private set; }
         public BaseEntity() 
         {
-            ModifiedDate = DateTime.Now;
+            UpdateDate = DateTime.Now;
         }
     }
 }

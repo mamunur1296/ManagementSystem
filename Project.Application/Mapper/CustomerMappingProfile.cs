@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Project.Application.CustomerFeatures.Commands;
 using Project.Application.DTOs;
+using Project.Application.Features.CustomerFeatures.Commands;
 using Project.Application.Models;
 using Project.Domail.Entities;
 
