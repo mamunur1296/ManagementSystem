@@ -119,3 +119,67 @@ Project/
 | Infrastructure| Implements data access logic and interacts with external resources like databases         |
 | Application   | Implements business logic, features, handlers, DTOs, and mapping profiles                 |
 | API           | Provides endpoints to interact with the application, including controllers and routes     |
+
+
+## CRUD Operations using MediatR and AutoMapper
+
+### Step 1: Entity for Domain/Entity folder
+
+```csharp
+public class DeliveryAddress
+{
+    public Guid Id { get; set; }
+    public string Address { get; set; }
+    public string Phone { get; set; }
+    public string Mobile { get; set; }
+    public string CreatedBy { get; set; }
+}
+
+
+## Step 2: Abstractions for Domain/Abstraction folder
+
+### 1. IDeliveryAddressCommandRepository.cs
+
+```csharp
+using Project.Domail.Abstractions.CommandRepositories.Base;
+using Project.Domail.Entities;
+
+namespace Project.Domail.Abstractions.CommandRepositories
+{
+    public interface IDeliveryAddressCommandRepository : ICommandRepository<DeliveryAddress>
+    {
+        // Add specific command methods here if needed
+    }
+}
+### 2. IDeliveryAddressQueryRepository.cs
+
+```csharp
+using Project.Domail.Abstractions.QueryRepositories.Base;
+using Project.Domail.Entities;
+
+namespace Project.Domail.Abstractions.QueryRepositories
+{
+    public interface IDeliveryAddressQueryRepository : IQueryRepository<DeliveryAddress>
+    {
+        // Add specific Query methods here if needed
+    }
+}
+
+
+### 3. IUnitOfWorkDb.cs
+
+```csharp
+using Project.Domail.Abstractions.CommandRepositories;
+using Project.Domail.Abstractions.QueryRepositories;
+using System.Threading.Tasks;
+
+namespace Project.Domail.Abstractions
+{
+    public interface IUnitOfWorkDb
+    {
+        IDeliveryAddressQueryRepository DeliveryAddressQueryRepository { get; }
+        IDeliveryAddressCommandRepository DeliveryAddressCommandRepository { get; }
+        Task SaveAsync();
+    }
+}
+
