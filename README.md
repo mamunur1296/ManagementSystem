@@ -26,7 +26,7 @@ Project/
 │       └── QueryRepositories/
 │           ├── IDeliveryAddressQueryRepository.cs
 │           └── ...
-│       └── IUnitOfWorkDb.cs
+│   └── IUnitOfWorkDb.cs
 ├── Infrastructure/
 │   ├── DataContext/
 │   │   └── ApplicationDbContext.cs
