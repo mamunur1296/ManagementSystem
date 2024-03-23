@@ -6,5 +6,6 @@ namespace Project.Domail.Abstractions.QueryRepositories
     public interface ICustomerQueryRepository : IQueryRepository<Customer>
     {
         Task<Customer> GetCustomerByEmail(string email);
+        // Add specific Query methods here if needed
     }
 }

@@ -15,7 +15,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUnitOfWorkDb, UnitOfWorkDb>();
 builder.Services.AddApplication().AddInfrastructure();
-builder.Services.AddAutoMapper(typeof(CustomerMappingProfile),typeof(ProductSizeMappingProfile));
+builder.Services.AddAutoMapper(
+    typeof(CustomerMappingProfile),
+    typeof(ProductSizeMappingProfile),
+    typeof(RetaileMappingProfile));
 builder.Services.AddDbContext<ApplicationDbContext>(option =>
 {
     option.UseSqlServer(builder.Configuration.GetConnectionString("dbcs"));

@@ -5,6 +5,6 @@ namespace Project.Domail.Abstractions.CommandRepositories
 {
     public interface ICustomerCommandRepository : ICommandRepository<Customer>
     {
-        // Extand for all if any
+        // Add specific command methods here if needed
     }
 }

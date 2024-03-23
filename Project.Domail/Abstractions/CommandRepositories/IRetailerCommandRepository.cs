@@ -3,7 +3,7 @@ using Project.Domail.Entities;
 
 namespace Project.Domail.Abstractions.CommandRepositories
 {
-    public interface IProductSizeCommandRepository : ICommandRepository<ProductSize>
+    public interface IRetailerCommandRepository : ICommandRepository<Retailer>
     {
         // Add specific command methods here if needed
     }

@@ -20,22 +20,22 @@ namespace Projects.Api.Controllers
         {
             return Ok(await _mediator.Send(commend));
         }
-        [HttpGet("getAllCustomer")]
+        [HttpGet("getAllProductSize")]
         public async Task<IActionResult> getAllCustomer()
         {
             return Ok(await _mediator.Send(new GetAllProductSizeQuery()));
         }
-        [HttpGet("getCustomer/{id}")]
+        [HttpGet("getProductSize/{id}")]
         public async Task<IActionResult> getCustomer(Guid id)
         {
             return Ok(await _mediator.Send(new GetProductSizeByIdQuery(id)));
         }
-        [HttpDelete("DeleteCustomer/{id}")]
+        [HttpDelete("DeleteProductSize/{id}")]
         public async Task<IActionResult> DeleteCustomer(Guid id)
         {
             return Ok(await _mediator.Send(new DeleteProductSizeCommand(id)));
         }
-        [HttpPut("Update/{id}")]
+        [HttpPut("UpdateProductSize/{id}")]
         public async Task<IActionResult> Update(Guid id, UpdateProductSizeCommand commend)
         {
             if (id != commend.Id)

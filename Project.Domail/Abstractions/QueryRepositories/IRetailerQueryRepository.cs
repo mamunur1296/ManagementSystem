@@ -3,7 +3,7 @@ using Project.Domail.Entities;
 
 namespace Project.Domail.Abstractions.QueryRepositories
 {
-    public interface IProductSizeQueryRepository : IQueryRepository<ProductSize>
+    public interface IRetailerQueryRepository : IQueryRepository<Retailer>
     {
         // Add specific Query methods here if needed
     }

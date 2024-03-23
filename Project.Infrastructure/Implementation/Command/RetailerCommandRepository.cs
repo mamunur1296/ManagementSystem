@@ -5,14 +5,15 @@ using Project.Infrastructure.Implementation.Command.Base;
 
 namespace Project.Infrastructure.Implementation.Command
 {
-    public class ProductSizeCommandRepository : CommandRepository<ProductSize> , IProductSizeCommandRepository
+    public class RetailerCommandRepository : CommandRepository<Retailer>,IRetailerCommandRepository
     {
         private readonly ApplicationDbContext _applicationDbContext;
 
-        public ProductSizeCommandRepository(ApplicationDbContext applicationDbContext) : base(applicationDbContext)
+        public RetailerCommandRepository(ApplicationDbContext applicationDbContext) : base(applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }
-        // Implement additional methods specific to ProductSizeCommandRepository here
+        // Implement additional methods specific to RetailerCommandRepository here
+
     }
 }

@@ -9,6 +9,8 @@ namespace Project.Domail.Abstractions
         ICustomerQueryRepository customerQueryRepository { get; }
         IProductSizeCommandRepository productSizeCommandRepository { get; }
         IProductSizeQueryRepository productSizeQueryRepository { get; }
+        IRetailerCommandRepository retailerCommandRepository { get; }
+        IRetailerQueryRepository retailerQueryRepository { get; }
         Task SaveAsync();
     }
 }
