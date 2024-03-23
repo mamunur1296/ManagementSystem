@@ -109,3 +109,13 @@ Project/
     └── Controllers/
 
         └── DeliveryAddressController.cs
+
+
+## Cline Architecture Table
+
+| Layer         | Responsibility                                                                           |
+|---------------|------------------------------------------------------------------------------------------|
+| Domain        | Contains business entities and abstractions for repositories and unit of work            |
+| Infrastructure| Implements data access logic and interacts with external resources like databases         |
+| Application   | Implements business logic, features, handlers, DTOs, and mapping profiles                 |
+| API           | Provides endpoints to interact with the application, including controllers and routes     |
