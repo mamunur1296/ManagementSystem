@@ -15,6 +15,8 @@ namespace Project.Domail.Abstractions
         IDeliveryAddressCommandRepository deliveryAddressCommandRepository { get; }
         IOrderCommandRepository orderCommandRepository { get; }
         IOrderQueryRepository orderQueryRepository { get; }
+        IProdReturnCommandRepository prodReturnCommandRepository { get; }   
+        IProdReturnQueryRepository prodReturnQueryRepository { get; }
         Task SaveAsync();
     }
 }

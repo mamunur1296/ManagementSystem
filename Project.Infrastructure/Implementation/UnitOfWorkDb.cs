@@ -31,6 +31,10 @@ namespace Project.Infrastructure.Implementation
 
         public IOrderQueryRepository orderQueryRepository { get; private set; }
 
+        public IProdReturnCommandRepository prodReturnCommandRepository { get; private set; }
+
+        public IProdReturnQueryRepository prodReturnQueryRepository { get; private set; }
+
         public UnitOfWorkDb(ApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
@@ -44,6 +48,8 @@ namespace Project.Infrastructure.Implementation
             deliveryAddressQueryRepository = new DeliveryAddressQueryRepository(applicationDbContext);
             orderCommandRepository = new OrderCommandRepository(applicationDbContext);
             orderQueryRepository = new OrderQueryRepository(applicationDbContext);
+            prodReturnCommandRepository = new ProdReturnCommandRepository(applicationDbContext);
+            prodReturnQueryRepository = new ProdReturnQueryRepository(applicationDbContext);
         }
 
 

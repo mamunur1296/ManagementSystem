@@ -71,22 +71,22 @@ namespace Project.Domail.Entities
     //    public virtual Product Product { get; set; }
     //}
 
-    public class ProdReturn
-    {
-        [Key]
-        public int Id { get; set; }
-        public int ProductId { get; set; }
-        public string Name { get; set; }
-        public string ProdSizeId { get; set; }
-        public string ProdValveId { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime? CreationDate { get; set; }
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdateDate { get; set; }
+    //public class ProdReturn
+    //{
+    //    [Key]
+    //    public int Id { get; set; }
+    //    public int ProductId { get; set; }
+    //    public string Name { get; set; }
+    //    public string ProdSizeId { get; set; }
+    //    public string ProdValveId { get; set; }
+    //    public string CreatedBy { get; set; }
+    //    public DateTime? CreationDate { get; set; }
+    //    public string UpdatedBy { get; set; }
+    //    public DateTime? UpdateDate { get; set; }
 
-        // Navigation property
-        public virtual Product Product { get; set; }
-    }
+    //    // Navigation property
+    //    public virtual Product Product { get; set; }
+    //}
 
     public class Product
     {
