@@ -46,6 +46,10 @@ namespace Project.Infrastructure.Implementation
 
         public ITraderQueryRepository traderQueryRepository { get; private set; }
 
+        public IUserCommandRepository userCommandRepository { get; private set; }
+
+        public IUserQueryRepository userQueryRepository { get; private set; }
+
         public UnitOfWorkDb(ApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
@@ -67,6 +71,8 @@ namespace Project.Infrastructure.Implementation
             stockQueryRepository = new StockQueryRepository(applicationDbContext);
             traderCommandRepository = new TraderCommandRepository(applicationDbContext);
             traderQueryRepository = new TraderQueryRepository(applicationDbContext);
+            userCommandRepository = new UserCommandRepository(applicationDbContext);
+            userQueryRepository = new UserQueryRepository(applicationDbContext);
         }
 
 

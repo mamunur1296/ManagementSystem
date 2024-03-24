@@ -15,5 +15,6 @@ namespace Project.Infrastructure.DataContext
         public DbSet<Product> ? products { get; set; }
         public DbSet<Stock> ? stacks {  get; set; }
         public DbSet<Trader> ? traders { get; set; }
+        public DbSet<User> ? users { get; set; }
     }
 }

@@ -23,6 +23,8 @@ namespace Project.Domail.Abstractions
         IStockQueryRepository stockQueryRepository { get; } 
         ITraderCommandRepository traderCommandRepository { get; }
         ITraderQueryRepository traderQueryRepository { get; }
+        IUserCommandRepository userCommandRepository { get; }
+        IUserQueryRepository userQueryRepository { get; }
         Task SaveAsync();
     }
 }

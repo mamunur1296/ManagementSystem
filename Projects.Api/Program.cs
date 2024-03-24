@@ -23,7 +23,8 @@ builder.Services.AddAutoMapper(
     typeof(ProdReturnMappingProfile),
     typeof(ProductMappingProfile),
     typeof(StockMappingProfile),
-    typeof(TraderMappingProfile)
+    typeof(TraderMappingProfile),
+    typeof(UserMappingProfile)
     );
 builder.Services.AddDbContext<ApplicationDbContext>(option =>
 {
