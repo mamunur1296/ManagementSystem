@@ -21,7 +21,8 @@ builder.Services.AddAutoMapper(
     typeof(CompanyMappingProfile),
     typeof(DeliveryAddressMappingProfile),
     typeof(OrderMappingProfile),
-    typeof(ProdReturnMappingProfile)
+    typeof(ProdReturnMappingProfile),
+    typeof(ProductMappingProfile)
     );
 builder.Services.AddDbContext<ApplicationDbContext>(option =>
 {

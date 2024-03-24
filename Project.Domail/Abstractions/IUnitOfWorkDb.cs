@@ -17,6 +17,8 @@ namespace Project.Domail.Abstractions
         IOrderQueryRepository orderQueryRepository { get; }
         IProdReturnCommandRepository prodReturnCommandRepository { get; }   
         IProdReturnQueryRepository prodReturnQueryRepository { get; }
+        IProductCommandRepository productCommandRepository { get; }
+        IProductQueryRepository productQueryRepository { get; }
         Task SaveAsync();
     }
 }
