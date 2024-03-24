@@ -47,29 +47,29 @@ namespace Project.Domail.Entities
     //    public virtual User User { get; set; }
     //}
 
-    public class Order
-    {
-        [Key]
-        public int Id { get; set; }
-        public int UserId { get; set; }
-        public int ProductId { get; set; }
-        public bool IsHold { get; set; }
-        public bool IsCancel { get; set; }
-        public string ReturnProductId { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime CreationDate { get; set; }
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdateDate { get; set; }
-        public bool IsPlaced { get; set; }
-        public bool IsConfirmed { get; set; }
-        public bool IsDispatched { get; set; }
-        public bool IsReadyToDispatch { get; set; }
-        public bool IsDelivered { get; set; }
+    //public class Order
+    //{
+    //    [Key]
+    //    public int Id { get; set; }
+    //    public int UserId { get; set; }
+    //    public int ProductId { get; set; }
+    //    public bool IsHold { get; set; }
+    //    public bool IsCancel { get; set; }
+    //    public string ReturnProductId { get; set; }
+    //    public string CreatedBy { get; set; }
+    //    public DateTime CreationDate { get; set; }
+    //    public string UpdatedBy { get; set; }
+    //    public DateTime? UpdateDate { get; set; }
+    //    public bool IsPlaced { get; set; }
+    //    public bool IsConfirmed { get; set; }
+    //    public bool IsDispatched { get; set; }
+    //    public bool IsReadyToDispatch { get; set; }
+    //    public bool IsDelivered { get; set; }
 
-        // Navigation properties
-        public virtual User User { get; set; }
-        public virtual Product Product { get; set; }
-    }
+    //    // Navigation properties
+    //    public virtual User User { get; set; }
+    //    public virtual Product Product { get; set; }
+    //}
 
     public class ProdReturn
     {

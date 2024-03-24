@@ -10,5 +10,6 @@ namespace Project.Infrastructure.DataContext
         public DbSet<Retailer> ? railers { get; set; }
         public DbSet<Company> ? companies { get; set; }
         public DbSet<DeliveryAddress>? deliveryAddresses { get; set;}
+        public DbSet<Order> ? orders { get; set; }
     }
 }
