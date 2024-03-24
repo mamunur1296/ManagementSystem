@@ -142,46 +142,46 @@ namespace Project.Domail.Entities
     //    public string BIN { get; set; }
     //}
 
-    public class Stock
-    {
-        [Key]
-        public string Id { get; set; }
-        public string ProductId { get; set; }
-        public string TraderId { get; set; }
-        public int Quantity { get; set; }
-        public bool IsQC { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime CreationDate { get; set; }
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdateDate { get; set; }
-        public bool IsActive { get; set; }
+    //public class Stock
+    //{
+    //    [Key]
+    //    public string Id { get; set; }
+    //    public string ProductId { get; set; }
+    //    public string TraderId { get; set; }
+    //    public int Quantity { get; set; }
+    //    public bool IsQC { get; set; }
+    //    public string CreatedBy { get; set; }
+    //    public DateTime CreationDate { get; set; }
+    //    public string UpdatedBy { get; set; }
+    //    public DateTime? UpdateDate { get; set; }
+    //    public bool IsActive { get; set; }
 
-        // Navigation properties
-        public virtual Product Product { get; set; }
-        public virtual Trader Trader { get; set; }
-    }
+    //    // Navigation properties
+    //    public virtual Product Product { get; set; }
+    //    public virtual Trader Trader { get; set; }
+    //}
 
-    public class Trader
-    {
-        [Key]
-        public int Id { get; set; }
-        public int CompanyId { get; set; }
-        public string Name { get; set; }
-        public string Contactperson { get; set; }
-        public string ContactPerNum { get; set; }
-        public string ContactNumber { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime? CreationDate { get; set; }
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdateDate { get; set; }
-        public bool? IsActive { get; set; }
-        public DateTime? DeactivatedDate { get; set; }
-        public string DeactiveBy { get; set; }
-        public string BIN { get; set; }
+    //public class Trader
+    //{
+    //    [Key]
+    //    public int Id { get; set; }
+    //    public int CompanyId { get; set; }
+    //    public string Name { get; set; }
+    //    public string Contactperson { get; set; }
+    //    public string ContactPerNum { get; set; }
+    //    public string ContactNumber { get; set; }
+    //    public string CreatedBy { get; set; }
+    //    public DateTime? CreationDate { get; set; }
+    //    public string UpdatedBy { get; set; }
+    //    public DateTime? UpdateDate { get; set; }
+    //    public bool? IsActive { get; set; }
+    //    public DateTime? DeactivatedDate { get; set; }
+    //    public string DeactiveBy { get; set; }
+    //    public string BIN { get; set; }
 
-        // Navigation properties
-        //public virtual ICollection<Stock> Stocks { get; set; }
-    }
+    //    // Navigation properties
+    //    //public virtual ICollection<Stock> Stocks { get; set; }
+    //}
 
     public class User
     {

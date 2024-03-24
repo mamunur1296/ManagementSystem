@@ -38,6 +38,14 @@ namespace Project.Infrastructure.Implementation
         public IProductCommandRepository productCommandRepository { get; private set; }
         public IProductQueryRepository productQueryRepository { get; private set; }
 
+        public IStockCommandRepository stockCommandRepository { get; private set; }
+
+        public IStockQueryRepository stockQueryRepository { get; private set; }
+
+        public ITraderCommandRepository traderCommandRepository { get; private set; }
+
+        public ITraderQueryRepository traderQueryRepository { get; private set; }
+
         public UnitOfWorkDb(ApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
@@ -55,6 +63,10 @@ namespace Project.Infrastructure.Implementation
             prodReturnQueryRepository = new ProdReturnQueryRepository(applicationDbContext);
             productCommandRepository = new ProductCommandRepository(applicationDbContext);  
             productQueryRepository = new ProductQueryRepository(applicationDbContext);
+            stockCommandRepository = new StockCommandRepository(applicationDbContext);
+            stockQueryRepository = new StockQueryRepository(applicationDbContext);
+            traderCommandRepository = new TraderCommandRepository(applicationDbContext);
+            traderQueryRepository = new TraderQueryRepository(applicationDbContext);
         }
 
 

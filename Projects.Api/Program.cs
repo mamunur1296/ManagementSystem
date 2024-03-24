@@ -9,7 +9,6 @@ using School.Infrastructiure;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -22,7 +21,9 @@ builder.Services.AddAutoMapper(
     typeof(DeliveryAddressMappingProfile),
     typeof(OrderMappingProfile),
     typeof(ProdReturnMappingProfile),
-    typeof(ProductMappingProfile)
+    typeof(ProductMappingProfile),
+    typeof(StockMappingProfile),
+    typeof(TraderMappingProfile)
     );
 builder.Services.AddDbContext<ApplicationDbContext>(option =>
 {
