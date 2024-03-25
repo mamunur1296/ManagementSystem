@@ -1,4 +1,6 @@
-﻿namespace Project.Application.DTOs
+﻿using Project.Domail.Entities;
+
+namespace Project.Application.DTOs
 {
     public class CompanyDTO
     {
@@ -13,6 +15,7 @@
         public DateTime? DeactivatedDate { get; set; }
         public string? DeactiveBy { get; set; }
         public string? BIN { get; set; }
-
+        public virtual ICollection<Product>? Products { get; set; }
+        public virtual ICollection<Trader>? Traders { get; set; }
     }
 }

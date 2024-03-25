@@ -2,7 +2,6 @@
 using MediatR;
 using Project.Application.DTOs;
 using Project.Application.Features.CompanyFeatures.Queries;
-using Project.Application.Features.RetailerFeatures.Queries;
 using Project.Domail.Abstractions;
 
 namespace Project.Application.Features.CompanyFeatures.Handlers.QueryHandlers
@@ -18,9 +17,16 @@ namespace Project.Application.Features.CompanyFeatures.Handlers.QueryHandlers
         }
         public async Task<IEnumerable<CompanyDTO>> Handle(GetAllCompanyQuery request, CancellationToken cancellationToken)
         {
-            var dataList = await _unitOfWorkDb.companyrQueryRepository.GetAllAsync();
-            var data = dataList.Select(x => _mapper.Map<CompanyDTO>(x));
-            return data;
+            var companyList = await _unitOfWorkDb.companyrQueryRepository.GetAllAsync();
+            var productList = await _unitOfWorkDb.productQueryRepository.GetAllAsync();
+            var tradersList = await _unitOfWorkDb.traderQueryRepository.GetAllAsync();
+            foreach (var company in companyList)
+            {
+                company.Products = productList.Where(x => x.CompanyId == company.Id).ToList();
+                company.Traders = tradersList.Where(x => x.CompanyId == company.Id).ToList();
+            }
+            var companyDtos = companyList.Select(item => _mapper.Map<CompanyDTO>(item));
+            return companyDtos;
         }
     }
 }

@@ -8,8 +8,6 @@ namespace Project.Domail.Entities
         public string? Contactperson { get; set; }
         public string? ContactPerNum { get; set; }
         public string? ContactNumber { get; set; }
-        public string? CreatedBy { get; set; }
-        public string? UpdatedBy { get; set; }
         public bool ? IsActive { get; set; }
         public DateTime? DeactivatedDate { get; set; }
         public string? DeactiveBy { get; set; }

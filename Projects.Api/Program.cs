@@ -5,6 +5,7 @@ using Project.Infrastructure.DataContext;
 using Project.Infrastructure.Implementation;
 using School.Application;
 using School.Infrastructiure;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +27,11 @@ builder.Services.AddAutoMapper(
     typeof(TraderMappingProfile),
     typeof(UserMappingProfile)
     );
+builder.Services.AddControllers()
+        .AddJsonOptions(options =>
+        {
+            options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+        });
 builder.Services.AddDbContext<ApplicationDbContext>(option =>
 {
     option.UseSqlServer(builder.Configuration.GetConnectionString("dbcs"));
