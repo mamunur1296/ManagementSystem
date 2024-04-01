@@ -12,8 +12,8 @@ using Project.Infrastructure.DataContext;
 namespace Project.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240325083532_FkAdd")]
-    partial class FkAdd
+    [Migration("20240401204137_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -386,6 +386,9 @@ namespace Project.Infrastructure.Migrations
                     b.Property<Guid>("TraderId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid?>("TraderId1")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("UpdateDate")
                         .HasColumnType("datetime2");
 
@@ -398,6 +401,8 @@ namespace Project.Infrastructure.Migrations
                     b.HasIndex("ProductId");
 
                     b.HasIndex("TraderId");
+
+                    b.HasIndex("TraderId1");
 
                     b.ToTable("stacks");
                 });
@@ -462,6 +467,10 @@ namespace Project.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("ConfirmPassword")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("CreatedBy")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -476,6 +485,7 @@ namespace Project.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EmailAddress")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool?>("IsActive")
@@ -488,6 +498,11 @@ namespace Project.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
@@ -500,6 +515,10 @@ namespace Project.Infrastructure.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UpdatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserImg")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -539,7 +558,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Valve");
+                    b.ToTable("valves");
                 });
 
             modelBuilder.Entity("Project.Domail.Entities.DeliveryAddress", b =>
@@ -619,10 +638,14 @@ namespace Project.Infrastructure.Migrations
                         .IsRequired();
 
                     b.HasOne("Project.Domail.Entities.Trader", "Trader")
-                        .WithMany("Stocks")
+                        .WithMany()
                         .HasForeignKey("TraderId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
+
+                    b.HasOne("Project.Domail.Entities.Trader", null)
+                        .WithMany("Stocks")
+                        .HasForeignKey("TraderId1");
 
                     b.Navigation("Product");
 

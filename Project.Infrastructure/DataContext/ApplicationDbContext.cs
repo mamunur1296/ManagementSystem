@@ -16,5 +16,15 @@ namespace Project.Infrastructure.DataContext
         public DbSet<Stock> ? stacks {  get; set; }
         public DbSet<Trader> ? traders { get; set; }
         public DbSet<User> ? users { get; set; }
+        public DbSet<Valve> ? valves { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Stock>()
+                .HasOne(s => s.Trader)
+                .WithMany()
+                .HasForeignKey(s => s.TraderId)
+                .OnDelete(DeleteBehavior.NoAction); // Specify ON DELETE NO ACTION
+        }
     }
+    
 }

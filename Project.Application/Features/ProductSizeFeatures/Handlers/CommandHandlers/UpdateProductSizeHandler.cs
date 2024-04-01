@@ -21,7 +21,7 @@ namespace Project.Application.Features.ProductSizeFeatures.Handlers.CommandHandl
             if (data == null) return default;
             else
             {
-                data.Size = request.Size;
+                
                 data.Unit=request.Unit;
                 data.UpdatedBy=request.UpdatedBy;
                 data.CreatedBy=request.CreatedBy;

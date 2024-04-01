@@ -18,9 +18,17 @@ namespace Project.Application.Features.OrderFeatures.Handlers.QueryHandlers
 
         public async Task<IEnumerable<OrderDTO>> Handle(GetAllOrderQuery request, CancellationToken cancellationToken)
         {
-            var dataList = await _unitOfWorkDb.orderQueryRepository.GetAllAsync();
-            var data = dataList.Select(x => _mapper.Map<OrderDTO>(x));
-            return data;
+            try
+            {
+                var dataList = await _unitOfWorkDb.orderQueryRepository.GetAllAsync();
+                var data = dataList.Select(x => _mapper.Map<OrderDTO>(x));
+                return data;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

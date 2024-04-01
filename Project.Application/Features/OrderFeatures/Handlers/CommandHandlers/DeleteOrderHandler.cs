@@ -16,14 +16,22 @@ namespace Project.Application.Features.OrderFeatures.Handlers.CommandHandlers
 
         public async Task<string> Handle(DeleteOrderCommand request, CancellationToken cancellationToken)
         {
-            var date = await _unitOfWorkDb.orderQueryRepository.GetByIdAsync(request.id);
-            if (date == null)
+            try
             {
-                return "Data not found";
+                var date = await _unitOfWorkDb.orderQueryRepository.GetByIdAsync(request.id);
+                if (date == null)
+                {
+                    return "Data not found";
+                }
+                await _unitOfWorkDb.orderCommandRepository.DeleteAsync(date);
+                await _unitOfWorkDb.SaveAsync();
+                return "Completed";
             }
-            await _unitOfWorkDb.orderCommandRepository.DeleteAsync(date);
-            await _unitOfWorkDb.SaveAsync();
-            return "Completed";
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

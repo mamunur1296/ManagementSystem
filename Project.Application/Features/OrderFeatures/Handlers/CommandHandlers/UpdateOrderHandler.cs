@@ -18,18 +18,26 @@ namespace Project.Application.Features.OrderFeatures.Handlers.CommandHandlers
 
         public async Task<OrderModels> Handle(UpdateOrderCommand request, CancellationToken cancellationToken)
         {
-            var data = await _unitOfWorkDb.orderQueryRepository.GetByIdAsync(request.Id);
-            if (data == null) return default;
-            else
+            try
             {
-                data.IsCancel = true;
-                data.CreatedBy = request.CreatedBy;
-                // extand 
+                var data = await _unitOfWorkDb.orderQueryRepository.GetByIdAsync(request.Id);
+                if (data == null) return default;
+                else
+                {
+                    data.IsCancel = true;
+                    data.CreatedBy = request.CreatedBy;
+                    // extand 
+                }
+                await _unitOfWorkDb.orderCommandRepository.UpdateAsync(data);
+                await _unitOfWorkDb.SaveAsync();
+                var customerRes = _mapper.Map<OrderModels>(data);
+                return customerRes;
             }
-            await _unitOfWorkDb.orderCommandRepository.UpdateAsync(data);
-            await _unitOfWorkDb.SaveAsync();
-            var customerRes = _mapper.Map<OrderModels>(data);
-            return customerRes;
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

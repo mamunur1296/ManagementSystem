@@ -25,7 +25,8 @@ builder.Services.AddAutoMapper(
     typeof(ProductMappingProfile),
     typeof(StockMappingProfile),
     typeof(TraderMappingProfile),
-    typeof(UserMappingProfile)
+    typeof(UserMappingProfile),
+    typeof(ValveMappingProfile)
     );
 builder.Services.AddControllers()
         .AddJsonOptions(options =>

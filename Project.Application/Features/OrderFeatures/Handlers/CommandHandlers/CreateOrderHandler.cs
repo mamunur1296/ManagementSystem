@@ -21,11 +21,19 @@ namespace Project.Application.Features.OrderFeatures.Handlers.CommandHandlers
 
         public async Task<OrderModels> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
         {
-            var productSizeEntity = _mapper.Map<Order>(request);
-            await _unitOfWorkDb.orderCommandRepository.AddAsync(productSizeEntity);
-            await _unitOfWorkDb.SaveAsync();
-            var newResponse = _mapper.Map<OrderModels>(productSizeEntity);
-            return newResponse;
+            try
+            {
+                var productSizeEntity = _mapper.Map<Order>(request);
+                await _unitOfWorkDb.orderCommandRepository.AddAsync(productSizeEntity);
+                await _unitOfWorkDb.SaveAsync();
+                var newResponse = _mapper.Map<OrderModels>(productSizeEntity);
+                return newResponse;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
