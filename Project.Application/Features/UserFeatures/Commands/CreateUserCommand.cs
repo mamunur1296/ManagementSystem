@@ -8,6 +8,9 @@ namespace Project.Application.Features.UserFeatures.Commands
 
         public string Name { get; set; }
         public string EmailAddress { get; set; }
+        public string Password { get; set; }
+        public string ConfirmPassword { get; set; }
+        public string UserImg { get; set; }
         public string Phone { get; set; }
         public string Mobile { get; set; }
         public string CreatedBy { get; set; }
