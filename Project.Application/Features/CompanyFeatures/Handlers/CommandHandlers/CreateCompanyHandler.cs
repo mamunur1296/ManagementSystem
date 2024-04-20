@@ -19,10 +19,24 @@ namespace Project.Application.Features.CompanyFeatures.Handlers.CommandHandlers
         }
         public async Task<CompanyModels> Handle(CreateCompanyCommand request, CancellationToken cancellationToken)
         {
-            var productSizeEntity = _mapper.Map<Company>(request);
-            await _unitOfWorkDb.companyCommandRepository.AddAsync(productSizeEntity);
+            var newCompany = new Company
+            {
+                Id = Guid.NewGuid(),
+                Name = request.Name,
+                Contactperson = request.Contactperson,
+                ContactNumber = request.ContactNumber,
+                BIN = request.BIN,
+                IsActive = request.IsActive,
+                UpdatedBy = "Admin",
+                ContactPerNum = request.ContactPerNum,
+                CreatedBy = "User1",
+                CreationDate = DateTime.Now,
+                DeactiveBy="Admin",  
+            };
+
+            await _unitOfWorkDb.companyCommandRepository.AddAsync(newCompany);
             await _unitOfWorkDb.SaveAsync();
-            var newResponse = _mapper.Map<CompanyModels>(productSizeEntity);
+            var newResponse = _mapper.Map<CompanyModels>(newCompany);
             return newResponse;
         }
     }

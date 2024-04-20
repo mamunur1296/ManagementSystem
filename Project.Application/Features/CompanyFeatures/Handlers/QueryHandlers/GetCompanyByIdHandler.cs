@@ -2,7 +2,6 @@
 using MediatR;
 using Project.Application.DTOs;
 using Project.Application.Features.CompanyFeatures.Queries;
-using Project.Application.Features.RetailerFeatures.Queries;
 using Project.Domail.Abstractions;
 
 namespace Project.Application.Features.CompanyFeatures.Handlers.QueryHandlers

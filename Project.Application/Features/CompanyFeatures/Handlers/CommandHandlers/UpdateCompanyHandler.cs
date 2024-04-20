@@ -18,21 +18,26 @@ namespace Project.Application.Features.CompanyFeatures.Handlers.CommandHandlers
        
         public async Task<CompanyModels> Handle(UpdateCompanyCommand request, CancellationToken cancellationToken)
         {
-            var data = await _unitOfWorkDb.companyrQueryRepository.GetByIdAsync(request.Id);
-            if (data == null) return default;
+            var company = await _unitOfWorkDb.companyrQueryRepository.GetByIdAsync(request.Id);
+            if (company == null) return default;
             else
             {
-                data.BIN = request.BIN;
-                data.Name = request.Name;
-                data.ContactPerNum = request.ContactPerNum;
-                data.ContactNumber = request.ContactNumber;
-                data.ContactPerNum = request.ContactPerNum;
-                data.DeactiveBy = request.DeactiveBy;
+                company.BIN = request.BIN;
+                company.Name = request.Name;
+                company.Contactperson = request.Contactperson;
+                company.ContactPerNum = request.ContactPerNum;
+                company.ContactNumber = request.ContactNumber;
+                company.CreatedBy = request.CreatedBy;
+                company.UpdatedBy = request.UpdatedBy;
+                company.DeactivatedDate = request.DeactivatedDate;
+                company.DeactiveBy = request.DeactiveBy;
+                company.IsActive = request.IsActive;
+
             }
-            await _unitOfWorkDb.companyCommandRepository.UpdateAsync(data);
+            await _unitOfWorkDb.companyCommandRepository.UpdateAsync(company);
             await _unitOfWorkDb.SaveAsync();
-            var customerRes = _mapper.Map<CompanyModels>(data);
-            return customerRes;
+            var companyRequest = _mapper.Map<CompanyModels>(company);
+            return companyRequest;
         }
     }
 }
