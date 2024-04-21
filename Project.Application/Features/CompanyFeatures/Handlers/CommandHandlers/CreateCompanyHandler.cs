@@ -36,8 +36,8 @@ namespace Project.Application.Features.CompanyFeatures.Handlers.CommandHandlers
 
             await _unitOfWorkDb.companyCommandRepository.AddAsync(newCompany);
             await _unitOfWorkDb.SaveAsync();
-            var newResponse = _mapper.Map<CompanyModels>(newCompany);
-            return newResponse;
+            var createdCompany = _mapper.Map<CompanyModels>(newCompany);
+            return createdCompany;
         }
     }
 }

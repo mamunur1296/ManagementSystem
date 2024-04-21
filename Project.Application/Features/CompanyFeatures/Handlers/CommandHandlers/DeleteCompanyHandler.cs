@@ -15,12 +15,12 @@ namespace Project.Application.Features.CompanyFeatures.Handlers.CommandHandlers
 
         public async Task<string> Handle(DeleteCompanyCommand request, CancellationToken cancellationToken)
         {
-            var date = await _unitOfWorkDb.companyrQueryRepository.GetByIdAsync(request.Id);
-            if (date == null)
+            var deleteCompany = await _unitOfWorkDb.companyrQueryRepository.GetByIdAsync(request.Id);
+            if (deleteCompany == null)
             {
                 return "Data not found";
             }
-            await _unitOfWorkDb.companyCommandRepository.DeleteAsync(date);
+            await _unitOfWorkDb.companyCommandRepository.DeleteAsync(deleteCompany);
             await _unitOfWorkDb.SaveAsync();
             return "Completed";
         }

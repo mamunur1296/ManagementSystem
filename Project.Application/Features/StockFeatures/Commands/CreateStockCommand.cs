@@ -8,7 +8,7 @@ namespace Project.Application.Features.StockFeatures.Commands
     {
         public Guid ProductId { get; set; }
         public Guid TraderId { get; set; }
-        public Guid Quantity { get; set; }
+        public int Quantity { get; set; }
         public bool IsQC { get; set; }
         public string CreatedBy { get; set; }
         public DateTime CreationDate { get; set; }

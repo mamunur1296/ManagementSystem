@@ -15,23 +15,23 @@ namespace Projects.Api.Controllers
         {
             _mediator = mediator;
         }
-        [HttpPost("Create")]
+        [HttpPost("CreateDeliveryAddress")]
         public async Task<IActionResult> Create(CreateDeliveryAddressCommand commend)
         {
             return Ok(await _mediator.Send(commend));
         }
         [HttpGet("getAllDeliveryAddress")]
-        public async Task<IActionResult> getAllCustomer()
+        public async Task<IActionResult> getAll()
         {
             return Ok(await _mediator.Send(new GetAllDeliveryAddressQuery()));
         }
         [HttpGet("getDeliveryAddress/{id}")]
-        public async Task<IActionResult> getCustomer(Guid id)
+        public async Task<IActionResult> getById(Guid id)
         {
             return Ok(await _mediator.Send(new GetDeliveryAddressByIdQuery(id)));
         }
         [HttpDelete("DeleteDeliveryAddress/{id}")]
-        public async Task<IActionResult> DeleteCustomer(Guid id)
+        public async Task<IActionResult> Delete(Guid id)
         {
             return Ok(await _mediator.Send(new DeleteDeliveryAddressCommand(id)));
         }

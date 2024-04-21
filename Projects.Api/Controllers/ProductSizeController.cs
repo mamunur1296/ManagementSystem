@@ -15,7 +15,7 @@ namespace Projects.Api.Controllers
         {
             _mediator = mediator;
         }
-        [HttpPost("Create")]
+        [HttpPost("CreateProductSize")]
         public async Task<IActionResult> Create(CreateProductSizeCommand commend)
         {
             return Ok(await _mediator.Send(commend));

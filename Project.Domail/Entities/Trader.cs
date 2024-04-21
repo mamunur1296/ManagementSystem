@@ -6,7 +6,7 @@ namespace Project.Domail.Entities
 {
     public class Trader : BaseEntity
     {
-        
+        [ForeignKey("Company")]
         public Guid CompanyId { get; set; }
         public string ? Name { get; set; }
         public string? Contactperson { get; set; }
@@ -19,6 +19,7 @@ namespace Project.Domail.Entities
 
         // Navigation properties
         public virtual ICollection<Stock>? Stocks { get; set; }
+        public virtual Company ?Company { get; set; }
 
     }
 }
